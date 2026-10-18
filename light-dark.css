@@ -1,0 +1,136 @@
+/* =====================================================================
+   FxPro: Light + Dark combo layer
+   Loaded AFTER site.css. Content sections turn light; the hero, the
+   .dk2 feature bands, the final call-to-action and the footer stay dark.
+   To undo everything: delete the <link> to this file in each page.
+   ===================================================================== */
+
+/* ---------- page background (light, soft teal + sand glow) ---------- */
+html{background:#F4F7F6;scrollbar-color:#b7cac5 #F4F7F6}
+::-webkit-scrollbar-track{background:#F4F7F6}
+::-webkit-scrollbar-thumb{background:#b7cac5}
+body:before{background:
+  radial-gradient(900px 600px at 10% -6%,rgba(109,184,171,.20),transparent 60%),
+  radial-gradient(800px 560px at 94% 6%,rgba(222,199,150,.22),transparent 60%),
+  radial-gradient(1000px 700px at 50% 112%,rgba(109,184,171,.14),transparent 60%),
+  #FBFCFB}
+body:after{opacity:.5;background-image:radial-gradient(rgba(22,37,34,.08) 1px,transparent 1.2px)}
+
+/* ---------- dark zones keep a solid dark background ---------- */
+.herow{margin-top:-96px;padding-top:96px;background:
+  radial-gradient(900px 600px at 12% -8%,rgba(95,212,191,.22),transparent 60%),
+  radial-gradient(800px 560px at 92% 8%,rgba(235,211,155,.14),transparent 60%),
+  radial-gradient(1000px 700px at 50% 112%,rgba(63,165,147,.20),transparent 60%),#050B0A}
+.cta{background:radial-gradient(900px 340px at 50% 0%,rgba(95,212,191,.20),transparent 70%),#050B0A}
+.ft{background:linear-gradient(180deg,#07110F,#050B0A)}
+
+/* ---------- light zones: every top-level block except the dark ones ---------- */
+#app > :not(.herow,.dk2,.cta){
+  --bg:#FBFCFB;--mut:#52625E;--line:rgba(22,37,34,.11);--tint:rgba(22,37,34,.035);
+  --tx:#2C6A60;--teal:#4FA597;--tealD:#2C6A60;--gold:#B8963F;--goldD:#9A7A2C;
+  --glass:linear-gradient(180deg,rgba(255,255,255,.88),rgba(255,255,255,.62));
+  --txt:#1E2F2B;--hi:#0F1F1C;
+  color:var(--txt);
+
+  .h1,.h2,.h3,h1,h2,h3,h4{color:var(--hi)}
+  .h2{background:linear-gradient(180deg,#0F1F1C 35%,#3E6A62);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .h1{text-shadow:none}
+  .em .wd>span,.em.nosplit{background:linear-gradient(100deg,#2C6A60 10%,#A07F2F 55%,#2C6A60 95%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+  .eb{background:rgba(79,165,151,.10);border-color:rgba(44,106,96,.28);box-shadow:none}
+  .crumb,.crumb a,.num,.note,.fn,.sbody .sub,.sthumb em,.an{color:#5B6F6A}
+  .lead,.at small,.ni p,.mr p,.pc span,.xc p,.bx p,.lg-sec p{color:var(--mut)}
+
+  /* buttons */
+  .b2{background:rgba(255,255,255,.75);color:var(--hi);border-color:rgba(22,37,34,.20)}
+  .b2:before{background:rgba(79,165,151,.14)}
+  .b3{background:rgba(79,165,151,.14);color:var(--hi);border-color:rgba(44,106,96,.4)}
+
+  /* stat strip */
+  &.strip,.strip{background:rgba(255,255,255,.7);border-color:var(--line)}
+  &.strip{background:rgba(255,255,255,.72);border-color:var(--line)}
+  .sti{border-color:var(--line)}
+  .sti b{background:linear-gradient(180deg,#0F1F1C,#2C6A60);-webkit-background-clip:text;background-clip:text;filter:none}
+
+  /* cards / glass surfaces */
+  .card,.pil,.sv,.pc,.edge,.ok,.tw,.ni{border:1px solid rgba(22,37,34,.10)!important;box-shadow:0 14px 36px -18px rgba(20,35,60,.20),inset 0 1px 0 rgba(255,255,255,.95)}
+  .sv:hover,.pil:hover{border-color:rgba(44,106,96,.40)!important;box-shadow:0 24px 50px -24px rgba(44,106,96,.35),inset 0 1px 0 #fff}
+  .sv:before,.pil:before{background:radial-gradient(420px circle at var(--mx,50%) var(--my,0),rgba(79,165,151,.14),transparent 60%)}
+  .sv.dk{background:linear-gradient(180deg,rgba(79,165,151,.12),rgba(255,255,255,.6))!important}
+  .opt,.ind span,.pill,.chip,.ch2,.fl,.ch,.cp{background:rgba(255,255,255,.78);border-color:rgba(22,37,34,.13);color:var(--txt)}
+  .pre{background:rgba(22,37,34,.045);border-color:var(--line);color:var(--txt)}
+  .tag{border-color:rgba(44,106,96,.4)}
+  .go{border-color:var(--line)}
+  .ic,.sthumb{background:rgba(79,165,151,.10);border-color:rgba(44,106,96,.25)}
+  .ul li{color:#2C403C}
+  .chips.stick{background:rgba(244,247,246,.88)}
+  .mq>div>*{color:var(--txt)}
+  .ni b,.ts b,.tc b,.ah,.at,.bli b,.bi b,.mr h3,.sm2 h3,.pn b,.pq,.step h3,.sbody h3,.spn h3,.xc h3,.bx h3,.pc a{color:var(--hi)}
+  .ni:nth-child(1){background:linear-gradient(135deg,rgba(79,165,151,.20),rgba(255,255,255,.7))!important}
+  .ni:nth-child(4){background:linear-gradient(135deg,rgba(222,199,150,.30),rgba(255,255,255,.7))!important}
+  .ni:before{background:radial-gradient(circle,rgba(79,165,151,.20),transparent 70%)}
+  .ni{border-top:1px solid rgba(22,37,34,.10)}
+  .nn{opacity:1}
+
+  /* forms */
+  .fld{color:var(--txt)}
+  .in{background:#fff;border-color:rgba(22,37,34,.22);color:var(--hi);color-scheme:light}
+  .in::placeholder{color:#7C8F8A}
+  .in option{background:#fff;color:#0F1F1C}
+  .in:focus{background:#fff;border-color:var(--teal);box-shadow:0 0 0 4px rgba(79,165,151,.22)}
+  .in[type=date]{color-scheme:light}
+  .bar{background:rgba(22,37,34,.10)}.bar i{background:rgba(22,37,34,.28)}
+  .err{color:#C2410C}.in.bad{border-color:#C2410C}
+  .tbl th{background:rgba(22,37,34,.05);color:var(--hi)}
+  .tbl td{border-color:var(--line);color:var(--txt)}
+
+  /* lines, rows, accordions */
+  .pr,.sx,.sxl,.pl,.pls,.pn,.pn a+a,.svb,.tc>div,.ul.hl li,.ul.hl li:last-child,.acc,.ar,.step,.mr,.rl,.eg,.eg>div,.bfx>div,.bli,.bli:last-child,.sar,.bnd{border-color:var(--line)}
+  .ts:before{background:var(--line)}
+  .ap{border-color:rgba(22,37,34,.28);color:var(--hi)}
+  .ar.open .ap{background:var(--teal);color:#fff;border-color:var(--teal)}
+  .pr:hover,.mr:hover,.sx:hover{background:linear-gradient(90deg,rgba(79,165,151,.10),transparent)}
+  .lgi{box-shadow:0 10px 26px -14px rgba(20,35,60,.35),0 0 0 1px rgba(22,37,34,.10)}
+  .bfx strong{background:linear-gradient(90deg,#0F1F1C,#2C6A60);-webkit-background-clip:text;background-clip:text}
+  .pg4>div{color:var(--hi)}
+  .ts .no{background:rgba(79,165,151,.14);color:var(--tx);border-color:rgba(44,106,96,.5);box-shadow:none}
+  .ts:hover .no{background:var(--teal);color:#fff}
+  .sk{-webkit-text-stroke-color:rgba(44,106,96,.55)}
+
+  /* service tabs */
+  .stb{color:#5B6F6A}.stb:hover{color:var(--hi)}.stb em{color:#8aa09a}
+  .stb.on{color:var(--hi);background:linear-gradient(90deg,rgba(79,165,151,.18),transparent)}
+
+  /* service / partner / profile cards */
+  .xc,.bx,.pcx{border:1px solid rgba(22,37,34,.10);
+    background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(79,165,151,.14),transparent 60%),linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.66));
+    box-shadow:0 14px 36px -18px rgba(20,35,60,.20),inset 0 1px 0 #fff}
+  .xc:hover,.xc:focus-visible,.pcx:hover{border-color:rgba(44,106,96,.4);box-shadow:0 26px 50px -24px rgba(44,106,96,.38),inset 0 1px 0 #fff}
+  .bx:hover{border-color:rgba(44,106,96,.4)}
+  .xc:before{-webkit-text-stroke:1px rgba(44,106,96,.16)}
+  .xc:hover:before{-webkit-text-stroke-color:rgba(44,106,96,.34)}
+  .xm{color:#334743}
+  .xn,.pin span{color:#5B6F6A}
+  .pin span{color:var(--tx)}
+  .pin b,.xc h3,.bx h3{color:var(--hi)}
+  .xic{box-shadow:none;border-color:rgba(44,106,96,.28);background:linear-gradient(145deg,rgba(79,165,151,.20),rgba(79,165,151,.06))}
+  .xgo i{border-color:rgba(44,106,96,.4)}
+  .xc:hover .xgo i{color:#fff}
+  .xsc{color:#8A6B1E;border-color:rgba(160,127,47,.4);background:rgba(222,199,150,.25)}
+  .pa{background:rgba(255,255,255,.8);border-color:rgba(22,37,34,.16);color:var(--hi)}
+  .pa:hover{background:#fff;border-color:rgba(44,106,96,.5)}
+  .bx small,.bx-a{color:var(--tx)}.bx-a:hover{color:var(--hi)}
+  .bx-chips span{background:rgba(79,165,151,.10);border-color:rgba(44,106,96,.22);color:var(--txt)}
+
+  /* legal text */
+  .lg-sec h2,.lg-sec h3{color:var(--hi);-webkit-text-fill-color:currentColor;background:none}
+  .lg-sec p,.lg-sec li{color:#3C504B}
+}
+
+/* sub-navigation bar on inner pages */
+.subnav .sn{background:rgba(255,255,255,.82);border-color:rgba(22,37,34,.12)}
+.subnav .sn a{color:#4A5F5A}
+.subnav .sn a:hover,.subnav .sn a.on{color:#0F1F1C}
+.subnav .sl0{color:#5B6F6A}
+
+/* keep the dark zones exactly as designed (light heading gradients etc.) */
+.herow,.dk2,.cta{color:#E9F3F0}
